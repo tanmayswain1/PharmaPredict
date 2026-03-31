@@ -44,18 +44,17 @@ print("All files saved: medicine_model.pkl, country_encoder.pkl, product_encoder
 
 
 
-# --- TERMINAL CONFUSION MATRIX ---
+#  TERMINAL CONFUSION MATRIX 
 print("\n" + "="*30)
 print("TEXT-BASED CONFUSION MATRIX")
 print("="*30)
 
-# Create a clean table using Pandas
 matrix_df = pd.crosstab(
     le_product.inverse_transform(y_test), 
     le_product.inverse_transform(y_pred), 
     rownames=['Actual'], 
     colnames=['Predicted'],
-    margins=True # This adds the 'Total' row and column
+    margins=True 
 )
 
 print(matrix_df)
